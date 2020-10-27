@@ -19,7 +19,7 @@
 	<li><a href="jsonpTest2">jsonpListTest</a></li>
 	<li><a href="jsonpTest3">jsonpTest3</a></li>
 	<li><a href="memberInfo">memberInfo</a></li>
-	
+	asdasd
 	<li><a href="memberLogin">로그인</a></li>
 	<li><a href="memberSignUp">회원가입</a></li>
 	
