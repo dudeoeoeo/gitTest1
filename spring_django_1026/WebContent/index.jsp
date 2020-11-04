@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>만나 첫페이지</h2>
+<h2>github 성공???</h2>
 <ul>
 	<li><a href="hello">Hello</a></li>
 	<li><a href="what">What</a></li>
