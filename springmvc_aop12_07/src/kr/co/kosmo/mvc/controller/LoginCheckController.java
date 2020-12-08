@@ -32,6 +32,7 @@ public class LoginCheckController {
 	@RequestMapping(value = "/loginProcess")
 	public String loginForm(MemberVO vo, HttpSession session, HttpServletRequest request, 
 			@RequestHeader("User-Agent") String userAgent ) {
+		
 		System.out.println("id : " + vo.getId());
 		System.out.println("pwd : " + vo.getPwd());
 		System.out.println("userAgent : " + userAgent);

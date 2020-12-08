@@ -14,7 +14,6 @@ public class DefaultController {
 	// HandlerMapping
 	@RequestMapping(value = {"/","/index"})
 	public ModelAndView myindex() {
-		System.out.println("우선매핑");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
 		mv.addObject("msg", "하이");

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- aop의 적용 대상이 되는 Bean 객체 생성 -->
+	<bean id="apiBean" class="api.APIBeanImp"/>
+	
+	<!-- 적용할 Advice 객체 (what + when) -->
+	<bean id="loggerAdvice" class="api.LoggerAdvice"/>
+
+	<!-- ///////////////////////////// AOP 설정 ///////////////////////////////////////////////// -->
+	<!-- pointcut 지정 (where) (aop가 적용될 메서드의 패턴을 지정한다.) -->
+	<bean id="loggerPointcut"
+	 	class="org.springframework.aop.aspectj.AspectJExpressionPointcut">
+	<property name="expression"
+	 	value="execution(public void api.APIBean*.*())"/>
+	</bean>
+
+	<!-- advisor 지정 (advice + pointcut = advisor)-->
+	<bean id="loggerAdvisor"
+	 	class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="loggerAdvice"/>
+		<property name="pointcut" ref="loggerPointcut"/>
+	</bean>
+	
+	<!-- target 빈을 지정 -->
+	<bean id="aopBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="apiBean"/>
+		<property name="interceptorNames">
+		<value>loggerAdvisor</value>
+		</property>
+	</bean>
+	
+</beans>
