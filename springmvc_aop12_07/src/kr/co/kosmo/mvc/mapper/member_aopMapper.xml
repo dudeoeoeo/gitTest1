@@ -8,12 +8,14 @@
   <insert id="add" parameterType="maop">
   	insert into member_aop values(MEMBER_AOP_SEQ.nextval, #{id}, #{pwd}, #{name}, sysdate);
   </insert>
-  
+   
   <select id="idChk" parameterType="String" resultType="int">
   	select count(*) cnt from member_aop where id=#{id}
   </select>
   <!-- login -->
   <select id="loginchk" parameterType="maop" resultType="maop">
-  	select count(*) cnt, name from member_aop where id=#{id} group by name
+  	select id, name from member_aop where id=#{id} and pwd=#{pwd}
   </select>
+  
+  <!-- select count(*) cnt, id, name from member_aop where id=#{id} group by name -->
   </mapper>

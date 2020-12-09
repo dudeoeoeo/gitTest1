@@ -8,7 +8,6 @@ import annotation.BizService;
 
 public class AnnoTest {
 
-	
 	public static void main(String[] args) {
 		ApplicationContext context
 		 = new GenericXmlApplicationContext("annotation/annotation.xml");

@@ -9,7 +9,7 @@
 
 	<!-- annotation을 활용한 AOP 설정을 위한 반드시 선언 -->
 	<aop:aspectj-autoproxy/>
-	<!-- 빈 생성 -->
+	<!-- 빈 생성 class 를 객체화 하는 것과 똑같음 -->
 	<bean id="bizService" class="annotation.BizServiceImp"/>
 	<!-- Advice 빈 생성 -->
 	<bean id="advice" class="annotation.MyAspect"/>

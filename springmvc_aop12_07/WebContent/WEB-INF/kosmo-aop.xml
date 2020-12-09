@@ -13,8 +13,12 @@
 
 	<!-- DispatcherServlet 이 해당 어노테이션을 인식하도록 즉 스프링 컨테이너에 빈들로 자동으로 등록하도록 한다. -->
 	<context:component-scan base-package="kr.co.kosmo.mvc"/>
+	
 	<!-- mvc 기반의 어노테이션 가능 설정 -->
 	<mvc:annotation-driven/>
+	
+	<!-- aop를 자동적으로 DI 해주는 코드 -->
+	<aop:aspectj-autoproxy/>
 	
 	<!-- JNDI 설정 -->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">

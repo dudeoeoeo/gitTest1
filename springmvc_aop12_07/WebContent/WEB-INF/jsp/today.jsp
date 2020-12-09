@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>index 페이지</h1>
-	<h2><a href="index">login 하러 가즈아</a></h2>
+<p>Message : ${msg} : 컨트롤러에서 넘어오는 값</p>
+<p>today : ${today} : AOP에서 넘어오는 값 </p>
 </body>
 </html>
